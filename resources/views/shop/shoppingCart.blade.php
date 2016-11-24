@@ -14,13 +14,8 @@
                                 <span class="badge">{{ $product['qty'] }}</span>
                                 <strong>{{ $product['item']['title'] }}</strong>
                                 <span class="label label-success">{{ $product['price'] }}</span>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary btn-xs dropdown-toogle" data-toggle="dropdown">Action <span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Reduce by 1</a></li>
-                                        <li><a href="#">Reduce All</a></li>
-                                    </ul>
-                                </div>
+                                       <a href="{{ route('product.reduceByOne', ['id'=> $product['item']['id']]) }}"><span class="label label-danger">-</span></a>
+                                        <a href="{{ route('product.remove', ['id'=> $product['item']['id']]) }}"><span class="label label-danger">Delete All</span></a>
                             </li>
                     @endforeach
                 </ul>
